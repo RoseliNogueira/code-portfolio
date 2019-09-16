@@ -1,5 +1,0 @@
-Rose,Nogueira,1,0
-Noel,Moreira,2,0
-Vinicius,Gato,3,0
-Nicole,Leiteee,4,0
-as,as,5,0
