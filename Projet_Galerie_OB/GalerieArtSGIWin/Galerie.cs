@@ -7,6 +7,7 @@ using System.Text;
 
 namespace GalerieArtSGIWin
 {
+    //super important
     public class Galerie
     {
         List<Artiste> artists = new List<Artiste>();

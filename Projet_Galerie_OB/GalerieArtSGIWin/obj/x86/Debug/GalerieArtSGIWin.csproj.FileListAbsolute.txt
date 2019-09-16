@@ -49,3 +49,5 @@ C:\Users\nogue\Desktop\Projets\Projet_7_Galerie\GalerieArtSGIWin\obj\x86\Debug\G
 C:\Users\nogue\Desktop\Projets\Projet_7_Galerie\GalerieArtSGIWin\obj\x86\Debug\GalerieArtSGIWin.pdb
 C:\Users\nogue\Desktop\Projets\Projet_Galerie_OB\GalerieArtSGIWin\obj\x86\Debug\GalerieArtSGIWin.exe
 C:\Users\nogue\Desktop\Projets\Projet_Galerie_OB\GalerieArtSGIWin\obj\x86\Debug\GalerieArtSGIWin.pdb
+C:\Users\nogue\OneDrive\Documents\Project_GIT\Projet_Galerie_OB\GalerieArtSGIWin\obj\x86\Debug\GalerieArtSGIWin.exe
+C:\Users\nogue\OneDrive\Documents\Project_GIT\Projet_Galerie_OB\GalerieArtSGIWin\obj\x86\Debug\GalerieArtSGIWin.pdb
