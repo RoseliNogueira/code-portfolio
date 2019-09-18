@@ -1,0 +1,82 @@
+﻿<Window x:Class="NLH.Administrateur"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Administrateur" Height="722" Width="499">
+    <Grid>
+        <Label Content="NorthernLights Hospital" Margin="50,11,50,617" Name="lblNorthernLightsHospital" FontSize="18" HorizontalContentAlignment="Center" />
+        <TabControl Height="615" HorizontalAlignment="Left" Margin="20,47,0,0" Name="tabControl1" VerticalAlignment="Top" Width="432">
+            <TabItem Header="Ajouter" Name="tabItemAjouter">
+                <Grid Height="578">
+                    <Label Content="Prenom" Height="28" HorizontalAlignment="Left" Margin="27,81,0,0" Name="lblPrenom" VerticalAlignment="Top" Width="94" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="136,81,0,0" Name="txtPrenom" VerticalAlignment="Top" Width="266" />
+                    <Label Content="Nom Famille" Height="28" HorizontalAlignment="Left" Margin="27,111,0,0" Name="lblNomFamille" VerticalAlignment="Top" Width="94" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="136,111,0,0" Name="txtNomFamille" VerticalAlignment="Top" Width="266" />
+                    <Label Content="Adresse" Height="28" HorizontalAlignment="Left" Margin="27,141,0,0" Name="lblAdresse" VerticalAlignment="Top" Width="94" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="136,141,0,0" Name="txtAdresse" VerticalAlignment="Top" Width="266" />
+                    <Label Content="Ville" Height="28" HorizontalAlignment="Left" Margin="27,171,0,0" Name="lblVille" VerticalAlignment="Top" Width="94" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="136,171,0,0" Name="txtVille" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Province" Height="28" HorizontalAlignment="Left" Margin="27,201,0,0" Name="lblProvince" VerticalAlignment="Top" Width="94" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="136,201,0,0" Name="txtProvince" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Code Postal" Height="28" HorizontalAlignment="Left" Margin="27,231,0,0" Name="lblCodePostal" VerticalAlignment="Top" Width="94" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="136,231,0,0" Name="txtCodePostal" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Téléphone Princ." Height="28" HorizontalAlignment="Left" Margin="27,261,0,0" Name="lblTelPrinc" VerticalAlignment="Top" Width="98" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="136,261,0,0" Name="txtTelPrinc" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Téléphone Autre *" Height="28" HorizontalAlignment="Left" Margin="27,291,0,0" Name="lblTelAutre" VerticalAlignment="Top" Width="110" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="136,291,0,0" Name="txtTelAutre" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Date Naissance" Height="28" HorizontalAlignment="Left" Margin="27,321,0,0" Name="lblDateNaissance" VerticalAlignment="Top" Width="98" />
+                    <DatePicker Height="28" HorizontalAlignment="Left" Margin="136,321,0,0" Name="datePickerDateNaissance" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Sexe" Height="28" HorizontalAlignment="Left" Margin="27,351,0,0" Name="lblSexe" VerticalAlignment="Top" Width="98" />
+                    <ComboBox Height="28" HorizontalAlignment="Left" Margin="136,351,0,0" Name="cboSexe" VerticalAlignment="Top" Width="146" Text=""></ComboBox>
+                    <Label Content="Assurance Maladie" Height="28" HorizontalAlignment="Left" Margin="27,381,0,0" Name="lblAssuranceMaladie" VerticalAlignment="Top" Width="110" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="136,381,0,0" Name="txtAssuranceMaladie" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Assurance Social" Height="28" HorizontalAlignment="Left" Margin="27,411,0,0" Name="lblAssuranceSocial" VerticalAlignment="Top" Width="98" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="136,411,0,0" Name="txtAssuranceSocial" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Departement" Height="28" HorizontalAlignment="Left" Margin="27,441,0,0" Name="lblDepartement" VerticalAlignment="Top" Width="98" />
+                    <ComboBox Height="28" HorizontalAlignment="Left" Margin="136,441,0,0" Name="cboDepartement" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Description" VerticalAlignment="Top" Width="146" Text="" SelectionChanged="cboDepartement_SelectionChanged"></ComboBox>
+                    <Label Content="Poste" Height="28" HorizontalAlignment="Left" Margin="27,471,0,0" Name="lblPoste" VerticalAlignment="Top" Width="98" />
+                    <ComboBox Height="28" HorizontalAlignment="Right" Margin="0,471,144,0" Name="cboPoste" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}" DisplayMemberPath="Position" VerticalAlignment="Top" Width="146"></ComboBox>
+                    <Button Content="Quitter" Height="29" Margin="0,526,70,0" Name="buttonQuitter" VerticalAlignment="Top" HorizontalAlignment="Right" Width="90" Click="buttonQuitter_Click" />
+                    <Button Content="Confirmer" Height="29" HorizontalAlignment="Left" Margin="70,526,0,0" Name="buttonConfirmer" VerticalAlignment="Top" Width="90" ClipToBounds="False" Click="buttonConfirmer_Click" />
+                    <Label Content="Ajout d'employé" Height="34" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label1" VerticalAlignment="Top" Width="410" FontSize="16" HorizontalContentAlignment="Center" />
+                    <Label Content="Remplissage de champ avec (*) n'est pas obligatoire" Height="26" HorizontalAlignment="Left" Margin="31,44,0,0" Name="lblInfo" VerticalAlignment="Top" Width="371" Foreground="#FFD60000" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Supprimer" Name="tabItemSupprimer">
+                <Grid>
+                    <Label Content="ID Employe" Height="28" HorizontalAlignment="Left" Margin="26,36,0,0" Name="lblIDEmployeSup" VerticalAlignment="Top" Width="94" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,36,0,0" Name="txtIDEmployeSup" VerticalAlignment="Top" Width="146" />
+                    <Button ClipToBounds="False" Content="Recherche" Height="28" HorizontalAlignment="Left" Margin="296,35,0,0" Name="btnRecherche" VerticalAlignment="Top" Width="94" Click="btnRecherche_Click" />
+                    <Label Content="Prenom" Height="28" HorizontalAlignment="Left" Margin="26,67,0,0" Name="lblPrenomSup" VerticalAlignment="Top" Width="94" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,67,0,0" Name="txtPrenomSup" VerticalAlignment="Top" Width="266" />
+                    <Label Content="Nom Famille" Height="28" HorizontalAlignment="Left" Margin="26,98,0,0" Name="lblNomFamilleSup" VerticalAlignment="Top" Width="94" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,98,0,0" Name="txtNomFamilleSup" VerticalAlignment="Top" Width="266" />
+                    <Label Content="Adresse" Height="28" HorizontalAlignment="Left" Margin="26,129,0,0" Name="lblAdresseSup" VerticalAlignment="Top" Width="94" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,129,0,0" Name="txtAdresseSup" VerticalAlignment="Top" Width="266" />
+                    <Label Content="Ville" Height="28" HorizontalAlignment="Left" Margin="26,160,0,0" Name="lblVilleSup" VerticalAlignment="Top" Width="94" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,160,0,0" Name="txtVilleSup" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Province" Height="28" HorizontalAlignment="Left" Margin="26,191,0,0" Name="lblProvinceSup" VerticalAlignment="Top" Width="94" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,191,0,0" Name="txtProvinceSup" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Code Postal" Height="28" HorizontalAlignment="Left" Margin="26,222,0,0" Name="lblCodePostalSup" VerticalAlignment="Top" Width="94" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,222,0,0" Name="txtCodePostalSup" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Téléphone Princ." Height="28" HorizontalAlignment="Left" Margin="26,253,0,0" Name="lblTelPrincSup" VerticalAlignment="Top" Width="98" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,253,0,0" Name="txtTelPrincSup" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Téléphone Autre" Height="28" HorizontalAlignment="Left" Margin="26,284,0,0" Name="lblTelAutreSup" VerticalAlignment="Top" Width="98" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,284,0,0" Name="txtTelAutreSup" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Date Naissance" Height="28" HorizontalAlignment="Left" Margin="26,315,0,0" Name="lblDateNaissanceSup" VerticalAlignment="Top" Width="98" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,315,0,0" Name="txtDateNaissanceSup" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Sexe" Height="28" HorizontalAlignment="Left" Margin="26,346,0,0" Name="lblSexeSup" VerticalAlignment="Top" Width="98" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,346,0,0" Name="txtSexeSup" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Assurance Maladie" Height="28" HorizontalAlignment="Left" Margin="26,377,0,0" Name="lblAssuranceMaladieSup" VerticalAlignment="Top" Width="110" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,377,0,0" Name="txtAssuranceMaladieSup" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Assurance Social" Height="28" HorizontalAlignment="Left" Margin="26,408,0,0" Name="lblAssuranceSocialSup" VerticalAlignment="Top" Width="98" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,408,0,0" Name="txtAssuranceSocialSup" VerticalAlignment="Top" Width="146" />
+                    <Label Content="Status" Height="28" HorizontalAlignment="Left" Margin="26,439,0,0" Name="lblStatus" VerticalAlignment="Top" Width="98" />
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="135,439,0,0" Name="txtStatus" VerticalAlignment="Top" Width="146" />
+                    <Button Content="Quitter" Height="29" Margin="0,511,70,0" Name="buttonQuitterSup" VerticalAlignment="Top" HorizontalAlignment="Right" Width="90" Click="buttonQuitterSup_Click" />
+                    <Button Content="Supprimer" Height="29" HorizontalAlignment="Left" Margin="70,511,0,0" Name="buttonConfirmerSup" VerticalAlignment="Top" Width="90" ClipToBounds="False" Click="buttonConfirmerSup_Click" />
+                    
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

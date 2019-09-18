@@ -1,0 +1,25 @@
+﻿<Window x:Class="NLH.Conge"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Conge" Height="512" Width="514">
+    <Grid Height="456" Width="491">
+        <Label Content="Donner Congé" Height="46" Margin="0,10,12,0" Name="lblDonnerConge" VerticalAlignment="Top" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontStretch="Normal" FontWeight="Medium" HorizontalAlignment="Right" Width="468" />
+        <Label Content="ID Admission" Height="28" HorizontalAlignment="Left" Margin="36,69,0,0" Name="lblAssuranceMaladie" VerticalAlignment="Top" Width="110" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="144,70,0,0" Name="txtidadmission" VerticalAlignment="Top" Width="146" TextChanged="txtidadmission_TextChanged" />
+        <Button ClipToBounds="False" Content="Recherche" Height="28" HorizontalAlignment="Left" Margin="312,70,0,0" Name="btnRecherche" VerticalAlignment="Top" Width="94" Click="btnRecherche_Click" />
+        <Label Content="Nom Patient" Height="28" HorizontalAlignment="Left" Margin="35,113,0,0" Name="lblNomPatient" VerticalAlignment="Top" Width="94" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="144,113,0,0" Name="txtNomPatient" VerticalAlignment="Top" Width="262" />
+        <Label Content="Médecin" Height="28" HorizontalAlignment="Left" Margin="35,156,0,0" Name="lblMedecin" VerticalAlignment="Top" Width="94" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="144,156,0,0" Name="txtMedecin" VerticalAlignment="Top" Width="262" />
+        <Label Content="Type de lit occupé" Height="28" HorizontalAlignment="Left" Margin="35,199,0,0" Name="lblTypeLitOccupe" VerticalAlignment="Top" Width="110" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="144,199,0,0" Name="txtTypeLitOccupe" VerticalAlignment="Top" Width="146" />
+        <Label Content="Lit attribué" Height="28" HorizontalAlignment="Left" Margin="35,242,0,0" Name="lblLitAttribue" VerticalAlignment="Top" Width="110" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="144,242,0,0" Name="txtLitAttribue" VerticalAlignment="Top" Width="146" />
+        <Label Content="Date Admission" Height="28" HorizontalAlignment="Left" Margin="35,285,0,0" Name="lblDateAdmission" VerticalAlignment="Top" Width="94" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="144,285,0,0" Name="txtDateAdmission" VerticalAlignment="Top" Width="146" />
+        <Label Content="Date Congé" Height="28" HorizontalAlignment="Left" Margin="36,328,0,0" Name="lblDateConge" VerticalAlignment="Top" Width="94" />
+        <DatePicker Height="28" HorizontalAlignment="Left" Margin="144,328,0,0" Name="datePickerDateConge" VerticalAlignment="Top" Width="146" />
+        <Button Content="Confirmer Congé" Height="28" HorizontalAlignment="Left" Margin="60,390,0,0" Name="btnConfirmerConge" VerticalAlignment="Top" Width="110" ClipToBounds="False" Click="btnConfirmerConge_Click" />
+        <Button Content="Quitter" Height="28" HorizontalAlignment="Left" Margin="333,390,0,0" Name="btnQuitter" VerticalAlignment="Top" Width="110" Click="btnQuitter_Click" />
+    </Grid>
+</Window>

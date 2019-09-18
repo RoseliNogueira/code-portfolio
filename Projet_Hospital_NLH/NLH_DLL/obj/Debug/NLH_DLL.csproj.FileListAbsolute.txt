@@ -1,0 +1,6 @@
+C:\Users\nogue\Desktop\Projets\Projet_14_Hospital\NLH\NLH_DLL\bin\Debug\NLH_DLL.dll
+C:\Users\nogue\Desktop\Projets\Projet_14_Hospital\NLH\NLH_DLL\bin\Debug\NLH_DLL.pdb
+C:\Users\nogue\Desktop\Projets\Projet_14_Hospital\NLH\NLH_DLL\obj\Debug\NLH_DLL.dll
+C:\Users\nogue\Desktop\Projets\Projet_14_Hospital\NLH\NLH_DLL\obj\Debug\NLH_DLL.pdb
+C:\Users\nogue\Desktop\Projets\Projet_14_Hospital\NLH\NLH_DLL\bin\Debug\NLH_DLL.dll.config
+C:\Users\nogue\Desktop\Projets\Projet_14_Hospital\NLH\NLH_DLL\obj\Debug\NLH_DLL.csprojResolveAssemblyReference.cache

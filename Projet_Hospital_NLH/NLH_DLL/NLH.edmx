@@ -1,0 +1,1260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NLHModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="NLHModelStoreContainer">
+          <EntitySet Name="Departements" EntityType="NLHModel.Store.Departements" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employes" EntityType="NLHModel.Store.Employes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FichierAdmission" EntityType="NLHModel.Store.FichierAdmission" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FraisSupplemAdmission" EntityType="NLHModel.Store.FraisSupplemAdmission" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FraisSupplementaires" EntityType="NLHModel.Store.FraisSupplementaires" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Lits" EntityType="NLHModel.Store.Lits" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Patients" EntityType="NLHModel.Store.Patients" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Personnes" EntityType="NLHModel.Store.Personnes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Poste" EntityType="NLHModel.Store.Poste" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="NLHModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ViewEmploye" EntityType="NLHModel.Store.ViewEmploye" store:Type="Views" store:Schema="dbo" store:Name="ViewEmploye">
+            <DefiningQuery>SELECT 
+      [ViewEmploye].[IDPersonne] AS [IDPersonne], 
+      [ViewEmploye].[Prenom] AS [Prenom], 
+      [ViewEmploye].[NomFamille] AS [NomFamille], 
+      [ViewEmploye].[Adresse] AS [Adresse], 
+      [ViewEmploye].[CodePostal] AS [CodePostal], 
+      [ViewEmploye].[Ville] AS [Ville], 
+      [ViewEmploye].[Province] AS [Province], 
+      [ViewEmploye].[Sexe] AS [Sexe], 
+      [ViewEmploye].[DateNaissance] AS [DateNaissance], 
+      [ViewEmploye].[TelephonePrinc] AS [TelephonePrinc], 
+      [ViewEmploye].[TelephoneAutre] AS [TelephoneAutre], 
+      [ViewEmploye].[AssuranceMaladie] AS [AssuranceMaladie], 
+      [ViewEmploye].[IDEmploye] AS [IDEmploye], 
+      [ViewEmploye].[IDDepartement] AS [IDDepartement], 
+      [ViewEmploye].[AssuranceSocial] AS [AssuranceSocial], 
+      [ViewEmploye].[Utilisateur] AS [Utilisateur], 
+      [ViewEmploye].[MotdePasse] AS [MotdePasse], 
+      [ViewEmploye].[IDPoste] AS [IDPoste], 
+      [ViewEmploye].[Status] AS [Status]
+      FROM [dbo].[ViewEmploye] AS [ViewEmploye]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewFichierAdmission" EntityType="NLHModel.Store.ViewFichierAdmission" store:Type="Views" store:Schema="dbo" store:Name="ViewFichierAdmission">
+            <DefiningQuery>SELECT 
+      [ViewFichierAdmission].[IDAdmission] AS [IDAdmission], 
+      [ViewFichierAdmission].[IDPatient] AS [IDPatient], 
+      [ViewFichierAdmission].[NomPatient] AS [NomPatient], 
+      [ViewFichierAdmission].[IDEmploye] AS [IDEmploye], 
+      [ViewFichierAdmission].[NomMedecin] AS [NomMedecin], 
+      [ViewFichierAdmission].[IDLit] AS [IDLit], 
+      [ViewFichierAdmission].[LitAttribue] AS [LitAttribue], 
+      [ViewFichierAdmission].[TypeLit] AS [TypeLit], 
+      [ViewFichierAdmission].[DateAdmission] AS [DateAdmission], 
+      [ViewFichierAdmission].[DateConge] AS [DateConge]
+      FROM [dbo].[ViewFichierAdmission] AS [ViewFichierAdmission]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewLitsDepartement" EntityType="NLHModel.Store.ViewLitsDepartement" store:Type="Views" store:Schema="dbo" store:Name="ViewLitsDepartement">
+            <DefiningQuery>SELECT 
+      [ViewLitsDepartement].[IDLits] AS [IDLits], 
+      [ViewLitsDepartement].[IDDepartement] AS [IDDepartement], 
+      [ViewLitsDepartement].[Description] AS [Description], 
+      [ViewLitsDepartement].[NomDepartement] AS [NomDepartement], 
+      [ViewLitsDepartement].[TypeLit] AS [TypeLit], 
+      [ViewLitsDepartement].[Disponible] AS [Disponible], 
+      [ViewLitsDepartement].[LitsAttribue] AS [LitsAttribue]
+      FROM [dbo].[ViewLitsDepartement] AS [ViewLitsDepartement]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewMedecin" EntityType="NLHModel.Store.ViewMedecin" store:Type="Views" store:Schema="dbo" store:Name="ViewMedecin">
+            <DefiningQuery>SELECT 
+      [ViewMedecin].[IDEmploye] AS [IDEmploye], 
+      [ViewMedecin].[IDDepartement] AS [IDDepartement], 
+      [ViewMedecin].[IDPoste] AS [IDPoste], 
+      [ViewMedecin].[Utilisateur] AS [Utilisateur], 
+      [ViewMedecin].[MotdePasse] AS [MotdePasse], 
+      [ViewMedecin].[Status] AS [Status], 
+      [ViewMedecin].[NomMedecin] AS [NomMedecin]
+      FROM [dbo].[ViewMedecin] AS [ViewMedecin]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewPatient" EntityType="NLHModel.Store.ViewPatient" store:Type="Views" store:Schema="dbo" store:Name="ViewPatient">
+            <DefiningQuery>SELECT 
+      [ViewPatient].[IDPersonne] AS [IDPersonne], 
+      [ViewPatient].[Prenom] AS [Prenom], 
+      [ViewPatient].[NomFamille] AS [NomFamille], 
+      [ViewPatient].[NomComplet] AS [NomComplet], 
+      [ViewPatient].[Adresse] AS [Adresse], 
+      [ViewPatient].[CodePostal] AS [CodePostal], 
+      [ViewPatient].[Ville] AS [Ville], 
+      [ViewPatient].[Province] AS [Province], 
+      [ViewPatient].[Sexe] AS [Sexe], 
+      [ViewPatient].[DateNaissance] AS [DateNaissance], 
+      [ViewPatient].[TelephonePrinc] AS [TelephonePrinc], 
+      [ViewPatient].[TelephoneAutre] AS [TelephoneAutre], 
+      [ViewPatient].[AssuranceMaladie] AS [AssuranceMaladie], 
+      [ViewPatient].[IDPatient] AS [IDPatient], 
+      [ViewPatient].[ParentPlusProche] AS [ParentPlusProche]
+      FROM [dbo].[ViewPatient] AS [ViewPatient]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Employes_Departemets" Association="NLHModel.Store.FK_Employes_Departemets">
+            <End Role="Departements" EntitySet="Departements" />
+            <End Role="Employes" EntitySet="Employes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employes_Personnes" Association="NLHModel.Store.FK_Employes_Personnes">
+            <End Role="Personnes" EntitySet="Personnes" />
+            <End Role="Employes" EntitySet="Employes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employes_Poste" Association="NLHModel.Store.FK_Employes_Poste">
+            <End Role="Poste" EntitySet="Poste" />
+            <End Role="Employes" EntitySet="Employes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FichierAdmission_Employes" Association="NLHModel.Store.FK_FichierAdmission_Employes">
+            <End Role="Employes" EntitySet="Employes" />
+            <End Role="FichierAdmission" EntitySet="FichierAdmission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FichierAdmission_Lits" Association="NLHModel.Store.FK_FichierAdmission_Lits">
+            <End Role="Lits" EntitySet="Lits" />
+            <End Role="FichierAdmission" EntitySet="FichierAdmission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FichierAdmission_Patients" Association="NLHModel.Store.FK_FichierAdmission_Patients">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="FichierAdmission" EntitySet="FichierAdmission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FraisSupplemAdmission_FichierAdmission" Association="NLHModel.Store.FK_FraisSupplemAdmission_FichierAdmission">
+            <End Role="FichierAdmission" EntitySet="FichierAdmission" />
+            <End Role="FraisSupplemAdmission" EntitySet="FraisSupplemAdmission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FraisSupplemAdmission_FraisSupplementaires" Association="NLHModel.Store.FK_FraisSupplemAdmission_FraisSupplementaires">
+            <End Role="FraisSupplementaires" EntitySet="FraisSupplementaires" />
+            <End Role="FraisSupplemAdmission" EntitySet="FraisSupplemAdmission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lits_Departemets" Association="NLHModel.Store.FK_Lits_Departemets">
+            <End Role="Departements" EntitySet="Departements" />
+            <End Role="Lits" EntitySet="Lits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_Personnes" Association="NLHModel.Store.FK_Patients_Personnes">
+            <End Role="Personnes" EntitySet="Personnes" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Departements">
+          <Key>
+            <PropertyRef Name="IDDepartement" />
+          </Key>
+          <Property Name="IDDepartement" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NomDepartement" Type="nvarchar" Nullable="false" MaxLength="35" />
+        </EntityType>
+        <EntityType Name="Employes">
+          <Key>
+            <PropertyRef Name="IDEmploye" />
+          </Key>
+          <Property Name="IDEmploye" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDPersonne" Type="int" Nullable="false" />
+          <Property Name="IDDepartement" Type="int" Nullable="false" />
+          <Property Name="IDPoste" Type="int" Nullable="false" />
+          <Property Name="AssuranceSocial" Type="nchar" Nullable="false" MaxLength="11" />
+          <Property Name="Utilisateur" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="MotdePasse" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="FichierAdmission">
+          <Key>
+            <PropertyRef Name="IDAdmission" />
+          </Key>
+          <Property Name="IDAdmission" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDPatient" Type="int" Nullable="false" />
+          <Property Name="IDEmploye" Type="int" Nullable="false" />
+          <Property Name="IDLit" Type="int" Nullable="false" />
+          <Property Name="DateAdmission" Type="smalldatetime" Nullable="false" />
+          <Property Name="DateConge" Type="smalldatetime" />
+          <Property Name="AssurancePrivee" Type="nvarchar" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="FraisSupplemAdmission">
+          <Key>
+            <PropertyRef Name="IDFraisAdminission" />
+          </Key>
+          <Property Name="IDFraisAdminission" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDAdmission" Type="int" Nullable="false" />
+          <Property Name="IDFraisSupplementaires" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FraisSupplementaires">
+          <Key>
+            <PropertyRef Name="IDFraisSupplementaires" />
+          </Key>
+          <Property Name="IDFraisSupplementaires" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FraisTelephone" Type="real" Nullable="false" />
+          <Property Name="FraisTV" Type="real" Nullable="false" />
+          <Property Name="FraisLitSemiPrivee" Type="real" Nullable="false" />
+          <Property Name="FraisLitPrivee" Type="real" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lits">
+          <Key>
+            <PropertyRef Name="IDLits" />
+          </Key>
+          <Property Name="IDLits" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDDepartement" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="TypeLit" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Disponible" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patients">
+          <Key>
+            <PropertyRef Name="IDPatient" />
+          </Key>
+          <Property Name="IDPatient" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDPersonne" Type="int" Nullable="false" />
+          <Property Name="ParentPlusProche" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Personnes">
+          <Key>
+            <PropertyRef Name="IDPersonne" />
+          </Key>
+          <Property Name="IDPersonne" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Prenom" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="NomFamille" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="Adresse" Type="nvarchar" Nullable="false" MaxLength="35" />
+          <Property Name="Ville" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="Province" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="CodePostal" Type="nchar" Nullable="false" MaxLength="6" />
+          <Property Name="TelephonePrinc" Type="nchar" Nullable="false" MaxLength="14" />
+          <Property Name="TelephoneAutre" Type="nchar" MaxLength="14" />
+          <Property Name="DateNaissance" Type="smalldatetime" Nullable="false" />
+          <Property Name="Sexe" Type="nchar" Nullable="false" MaxLength="1" />
+          <Property Name="AssuranceMaladie" Type="nvarchar" Nullable="false" MaxLength="14" />
+        </EntityType>
+        <EntityType Name="Poste">
+          <Key>
+            <PropertyRef Name="IDPoste" />
+          </Key>
+          <Property Name="IDPoste" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « NLH.dbo.ViewEmploye » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+        <EntityType Name="ViewEmploye">
+          <Key>
+            <PropertyRef Name="IDPersonne" />
+            <PropertyRef Name="Prenom" />
+            <PropertyRef Name="NomFamille" />
+            <PropertyRef Name="Adresse" />
+            <PropertyRef Name="CodePostal" />
+            <PropertyRef Name="Ville" />
+            <PropertyRef Name="Province" />
+            <PropertyRef Name="Sexe" />
+            <PropertyRef Name="DateNaissance" />
+            <PropertyRef Name="TelephonePrinc" />
+            <PropertyRef Name="AssuranceMaladie" />
+            <PropertyRef Name="IDEmploye" />
+            <PropertyRef Name="IDDepartement" />
+            <PropertyRef Name="AssuranceSocial" />
+            <PropertyRef Name="Utilisateur" />
+            <PropertyRef Name="MotdePasse" />
+            <PropertyRef Name="IDPoste" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="IDPersonne" Type="int" Nullable="false" />
+          <Property Name="Prenom" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="NomFamille" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="Adresse" Type="nvarchar" Nullable="false" MaxLength="35" />
+          <Property Name="CodePostal" Type="nchar" Nullable="false" MaxLength="6" />
+          <Property Name="Ville" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="Province" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="Sexe" Type="nchar" Nullable="false" MaxLength="1" />
+          <Property Name="DateNaissance" Type="smalldatetime" Nullable="false" />
+          <Property Name="TelephonePrinc" Type="nchar" Nullable="false" MaxLength="14" />
+          <Property Name="TelephoneAutre" Type="nchar" MaxLength="14" />
+          <Property Name="AssuranceMaladie" Type="nchar" Nullable="false" MaxLength="14" />
+          <Property Name="IDEmploye" Type="int" Nullable="false" />
+          <Property Name="IDDepartement" Type="int" Nullable="false" />
+          <Property Name="AssuranceSocial" Type="nchar" Nullable="false" MaxLength="11" />
+          <Property Name="Utilisateur" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="MotdePasse" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="IDPoste" Type="int" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « NLH.dbo.ViewFichierAdmission » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+        <EntityType Name="ViewFichierAdmission">
+          <Key>
+            <PropertyRef Name="IDAdmission" />
+            <PropertyRef Name="IDPatient" />
+            <PropertyRef Name="NomPatient" />
+            <PropertyRef Name="IDEmploye" />
+            <PropertyRef Name="NomMedecin" />
+            <PropertyRef Name="IDLit" />
+            <PropertyRef Name="LitAttribue" />
+            <PropertyRef Name="TypeLit" />
+            <PropertyRef Name="DateAdmission" />
+          </Key>
+          <Property Name="IDAdmission" Type="int" Nullable="false" />
+          <Property Name="IDPatient" Type="int" Nullable="false" />
+          <Property Name="NomPatient" Type="nvarchar" Nullable="false" MaxLength="52" />
+          <Property Name="IDEmploye" Type="int" Nullable="false" />
+          <Property Name="NomMedecin" Type="nvarchar" Nullable="false" MaxLength="89" />
+          <Property Name="IDLit" Type="int" Nullable="false" />
+          <Property Name="LitAttribue" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="TypeLit" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="DateAdmission" Type="smalldatetime" Nullable="false" />
+          <Property Name="DateConge" Type="smalldatetime" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « NLH.dbo.ViewLitsDepartement » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+        <EntityType Name="ViewLitsDepartement">
+          <Key>
+            <PropertyRef Name="IDLits" />
+            <PropertyRef Name="IDDepartement" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="NomDepartement" />
+            <PropertyRef Name="TypeLit" />
+            <PropertyRef Name="Disponible" />
+            <PropertyRef Name="LitsAttribue" />
+          </Key>
+          <Property Name="IDLits" Type="int" Nullable="false" />
+          <Property Name="IDDepartement" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="NomDepartement" Type="nvarchar" Nullable="false" MaxLength="35" />
+          <Property Name="TypeLit" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Disponible" Type="bit" Nullable="false" />
+          <Property Name="LitsAttribue" Type="nvarchar" Nullable="false" MaxLength="68" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « NLH.dbo.ViewMedecin » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+        <EntityType Name="ViewMedecin">
+          <Key>
+            <PropertyRef Name="IDEmploye" />
+            <PropertyRef Name="IDDepartement" />
+            <PropertyRef Name="IDPoste" />
+            <PropertyRef Name="Utilisateur" />
+            <PropertyRef Name="MotdePasse" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="NomMedecin" />
+          </Key>
+          <Property Name="IDEmploye" Type="int" Nullable="false" />
+          <Property Name="IDDepartement" Type="int" Nullable="false" />
+          <Property Name="IDPoste" Type="int" Nullable="false" />
+          <Property Name="Utilisateur" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="MotdePasse" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="NomMedecin" Type="nvarchar" Nullable="false" MaxLength="89" />
+        </EntityType>
+        <!--Erreurs détectées durant la génération :
+      Avertissement 6002: La table/vue « NLH.dbo.ViewPatient » n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.
+      -->
+        <EntityType Name="ViewPatient">
+          <Key>
+            <PropertyRef Name="IDPersonne" />
+            <PropertyRef Name="Prenom" />
+            <PropertyRef Name="NomFamille" />
+            <PropertyRef Name="NomComplet" />
+            <PropertyRef Name="Adresse" />
+            <PropertyRef Name="CodePostal" />
+            <PropertyRef Name="Ville" />
+            <PropertyRef Name="Province" />
+            <PropertyRef Name="Sexe" />
+            <PropertyRef Name="DateNaissance" />
+            <PropertyRef Name="TelephonePrinc" />
+            <PropertyRef Name="AssuranceMaladie" />
+            <PropertyRef Name="IDPatient" />
+            <PropertyRef Name="ParentPlusProche" />
+          </Key>
+          <Property Name="IDPersonne" Type="int" Nullable="false" />
+          <Property Name="Prenom" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="NomFamille" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="NomComplet" Type="nvarchar" Nullable="false" MaxLength="52" />
+          <Property Name="Adresse" Type="nvarchar" Nullable="false" MaxLength="35" />
+          <Property Name="CodePostal" Type="nchar" Nullable="false" MaxLength="6" />
+          <Property Name="Ville" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="Province" Type="nvarchar" Nullable="false" MaxLength="25" />
+          <Property Name="Sexe" Type="nchar" Nullable="false" MaxLength="1" />
+          <Property Name="DateNaissance" Type="smalldatetime" Nullable="false" />
+          <Property Name="TelephonePrinc" Type="nchar" Nullable="false" MaxLength="14" />
+          <Property Name="TelephoneAutre" Type="nchar" MaxLength="14" />
+          <Property Name="AssuranceMaladie" Type="nchar" Nullable="false" MaxLength="14" />
+          <Property Name="IDPatient" Type="int" Nullable="false" />
+          <Property Name="ParentPlusProche" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK_Employes_Departemets">
+          <End Role="Departements" Type="NLHModel.Store.Departements" Multiplicity="1" />
+          <End Role="Employes" Type="NLHModel.Store.Employes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departements">
+              <PropertyRef Name="IDDepartement" />
+            </Principal>
+            <Dependent Role="Employes">
+              <PropertyRef Name="IDDepartement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employes_Personnes">
+          <End Role="Personnes" Type="NLHModel.Store.Personnes" Multiplicity="1" />
+          <End Role="Employes" Type="NLHModel.Store.Employes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personnes">
+              <PropertyRef Name="IDPersonne" />
+            </Principal>
+            <Dependent Role="Employes">
+              <PropertyRef Name="IDPersonne" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employes_Poste">
+          <End Role="Poste" Type="NLHModel.Store.Poste" Multiplicity="1" />
+          <End Role="Employes" Type="NLHModel.Store.Employes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poste">
+              <PropertyRef Name="IDPoste" />
+            </Principal>
+            <Dependent Role="Employes">
+              <PropertyRef Name="IDPoste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FichierAdmission_Employes">
+          <End Role="Employes" Type="NLHModel.Store.Employes" Multiplicity="1" />
+          <End Role="FichierAdmission" Type="NLHModel.Store.FichierAdmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employes">
+              <PropertyRef Name="IDEmploye" />
+            </Principal>
+            <Dependent Role="FichierAdmission">
+              <PropertyRef Name="IDEmploye" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FichierAdmission_Lits">
+          <End Role="Lits" Type="NLHModel.Store.Lits" Multiplicity="1" />
+          <End Role="FichierAdmission" Type="NLHModel.Store.FichierAdmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lits">
+              <PropertyRef Name="IDLits" />
+            </Principal>
+            <Dependent Role="FichierAdmission">
+              <PropertyRef Name="IDLit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FichierAdmission_Patients">
+          <End Role="Patients" Type="NLHModel.Store.Patients" Multiplicity="1" />
+          <End Role="FichierAdmission" Type="NLHModel.Store.FichierAdmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="IDPatient" />
+            </Principal>
+            <Dependent Role="FichierAdmission">
+              <PropertyRef Name="IDPatient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FraisSupplemAdmission_FichierAdmission">
+          <End Role="FichierAdmission" Type="NLHModel.Store.FichierAdmission" Multiplicity="1" />
+          <End Role="FraisSupplemAdmission" Type="NLHModel.Store.FraisSupplemAdmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FichierAdmission">
+              <PropertyRef Name="IDAdmission" />
+            </Principal>
+            <Dependent Role="FraisSupplemAdmission">
+              <PropertyRef Name="IDAdmission" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FraisSupplemAdmission_FraisSupplementaires">
+          <End Role="FraisSupplementaires" Type="NLHModel.Store.FraisSupplementaires" Multiplicity="1" />
+          <End Role="FraisSupplemAdmission" Type="NLHModel.Store.FraisSupplemAdmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FraisSupplementaires">
+              <PropertyRef Name="IDFraisSupplementaires" />
+            </Principal>
+            <Dependent Role="FraisSupplemAdmission">
+              <PropertyRef Name="IDFraisSupplementaires" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lits_Departemets">
+          <End Role="Departements" Type="NLHModel.Store.Departements" Multiplicity="1" />
+          <End Role="Lits" Type="NLHModel.Store.Lits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departements">
+              <PropertyRef Name="IDDepartement" />
+            </Principal>
+            <Dependent Role="Lits">
+              <PropertyRef Name="IDDepartement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_Personnes">
+          <End Role="Personnes" Type="NLHModel.Store.Personnes" Multiplicity="1" />
+          <End Role="Patients" Type="NLHModel.Store.Patients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personnes">
+              <PropertyRef Name="IDPersonne" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="IDPersonne" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NLHModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="NLHEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Departements" EntityType="NLHModel.Departement" />
+          <EntitySet Name="Employes" EntityType="NLHModel.Employe" />
+          <EntitySet Name="FichierAdmissions" EntityType="NLHModel.FichierAdmission" />
+          <EntitySet Name="FraisSupplemAdmissions" EntityType="NLHModel.FraisSupplemAdmission" />
+          <EntitySet Name="FraisSupplementaires" EntityType="NLHModel.FraisSupplementaire" />
+          <EntitySet Name="Lits" EntityType="NLHModel.Lit" />
+          <EntitySet Name="Patients" EntityType="NLHModel.Patient" />
+          <EntitySet Name="Personnes" EntityType="NLHModel.Personne" />
+          <EntitySet Name="sysdiagrams" EntityType="NLHModel.sysdiagram" />
+          <AssociationSet Name="FK_Employes_Departemets" Association="NLHModel.FK_Employes_Departemets">
+            <End Role="Departements" EntitySet="Departements" />
+            <End Role="Employes" EntitySet="Employes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Lits_Departemets" Association="NLHModel.FK_Lits_Departemets">
+            <End Role="Departements" EntitySet="Departements" />
+            <End Role="Lits" EntitySet="Lits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employes_Personnes" Association="NLHModel.FK_Employes_Personnes">
+            <End Role="Personnes" EntitySet="Personnes" />
+            <End Role="Employes" EntitySet="Employes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FichierAdmission_Employes" Association="NLHModel.FK_FichierAdmission_Employes">
+            <End Role="Employes" EntitySet="Employes" />
+            <End Role="FichierAdmission" EntitySet="FichierAdmissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FichierAdmission_Lits" Association="NLHModel.FK_FichierAdmission_Lits">
+            <End Role="Lits" EntitySet="Lits" />
+            <End Role="FichierAdmission" EntitySet="FichierAdmissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FichierAdmission_Patients" Association="NLHModel.FK_FichierAdmission_Patients">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="FichierAdmission" EntitySet="FichierAdmissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FraisSupplemAdmission_FichierAdmission" Association="NLHModel.FK_FraisSupplemAdmission_FichierAdmission">
+            <End Role="FichierAdmission" EntitySet="FichierAdmissions" />
+            <End Role="FraisSupplemAdmission" EntitySet="FraisSupplemAdmissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FraisSupplemAdmission_FraisSupplementaires" Association="NLHModel.FK_FraisSupplemAdmission_FraisSupplementaires">
+            <End Role="FraisSupplementaires" EntitySet="FraisSupplementaires" />
+            <End Role="FraisSupplemAdmission" EntitySet="FraisSupplemAdmissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_Personnes" Association="NLHModel.FK_Patients_Personnes">
+            <End Role="Personnes" EntitySet="Personnes" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <EntitySet Name="Postes" EntityType="NLHModel.Poste" />
+          <AssociationSet Name="FK_Employes_Poste" Association="NLHModel.FK_Employes_Poste">
+            <End Role="Poste" EntitySet="Postes" />
+            <End Role="Employe" EntitySet="Employes" />
+          </AssociationSet>
+          <EntitySet Name="ViewLitsDepartements" EntityType="NLHModel.ViewLitsDepartement" />
+          <EntitySet Name="ViewMedecins" EntityType="NLHModel.ViewMedecin" />
+          <EntitySet Name="ViewPatients" EntityType="NLHModel.ViewPatient" />
+          <EntitySet Name="ViewEmployes" EntityType="NLHModel.ViewEmploye" />
+          <EntitySet Name="ViewFichierAdmissions" EntityType="NLHModel.ViewFichierAdmission" />
+        </EntityContainer>
+        <EntityType Name="Departement">
+          <Key>
+            <PropertyRef Name="IDDepartement" />
+          </Key>
+          <Property Name="IDDepartement" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomDepartement" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Employes" Relationship="NLHModel.FK_Employes_Departemets" FromRole="Departements" ToRole="Employes" />
+          <NavigationProperty Name="Lits" Relationship="NLHModel.FK_Lits_Departemets" FromRole="Departements" ToRole="Lits" />
+        </EntityType>
+        <EntityType Name="Employe">
+          <Key>
+            <PropertyRef Name="IDEmploye" />
+          </Key>
+          <Property Name="IDEmploye" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPersonne" Type="Int32" Nullable="false" />
+          <Property Name="IDDepartement" Type="Int32" Nullable="false" />
+          <Property Name="AssuranceSocial" Type="String" Nullable="false" MaxLength="11" Unicode="true" FixedLength="true" />
+          <Property Name="Utilisateur" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="MotdePasse" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Departement" Relationship="NLHModel.FK_Employes_Departemets" FromRole="Employes" ToRole="Departements" />
+          <NavigationProperty Name="Personne" Relationship="NLHModel.FK_Employes_Personnes" FromRole="Employes" ToRole="Personnes" />
+          <NavigationProperty Name="FichierAdmissions" Relationship="NLHModel.FK_FichierAdmission_Employes" FromRole="Employes" ToRole="FichierAdmission" />
+          <Property Type="Int32" Name="IDPoste" Nullable="false" />
+          <NavigationProperty Name="Poste" Relationship="NLHModel.FK_Employes_Poste" FromRole="Employe" ToRole="Poste" />
+          <Property Type="String" Name="Status" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FichierAdmission">
+          <Key>
+            <PropertyRef Name="IDAdmission" />
+          </Key>
+          <Property Name="IDAdmission" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPatient" Type="Int32" Nullable="false" />
+          <Property Name="IDEmploye" Type="Int32" Nullable="false" />
+          <Property Name="IDLit" Type="Int32" Nullable="false" />
+          <Property Name="DateAdmission" Type="DateTime" Nullable="false" />
+          <Property Name="DateConge" Type="DateTime" />
+          <Property Name="AssurancePrivee" Type="String" Nullable="true" MaxLength="6" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Employe" Relationship="NLHModel.FK_FichierAdmission_Employes" FromRole="FichierAdmission" ToRole="Employes" />
+          <NavigationProperty Name="Lit" Relationship="NLHModel.FK_FichierAdmission_Lits" FromRole="FichierAdmission" ToRole="Lits" />
+          <NavigationProperty Name="Patient" Relationship="NLHModel.FK_FichierAdmission_Patients" FromRole="FichierAdmission" ToRole="Patients" />
+          <NavigationProperty Name="FraisSupplemAdmissions" Relationship="NLHModel.FK_FraisSupplemAdmission_FichierAdmission" FromRole="FichierAdmission" ToRole="FraisSupplemAdmission" />
+        </EntityType>
+        <EntityType Name="FraisSupplemAdmission">
+          <Key>
+            <PropertyRef Name="IDFraisAdminission" />
+          </Key>
+          <Property Name="IDFraisAdminission" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDAdmission" Type="Int32" Nullable="false" />
+          <Property Name="IDFraisSupplementaires" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FichierAdmission" Relationship="NLHModel.FK_FraisSupplemAdmission_FichierAdmission" FromRole="FraisSupplemAdmission" ToRole="FichierAdmission" />
+          <NavigationProperty Name="FraisSupplementaire" Relationship="NLHModel.FK_FraisSupplemAdmission_FraisSupplementaires" FromRole="FraisSupplemAdmission" ToRole="FraisSupplementaires" />
+        </EntityType>
+        <EntityType Name="FraisSupplementaire">
+          <Key>
+            <PropertyRef Name="IDFraisSupplementaires" />
+          </Key>
+          <Property Name="IDFraisSupplementaires" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FraisTelephone" Type="Single" Nullable="false" />
+          <Property Name="FraisTV" Type="Single" Nullable="false" />
+          <Property Name="FraisLitSemiPrivee" Type="Single" Nullable="false" />
+          <Property Name="FraisLitPrivee" Type="Single" Nullable="false" />
+          <NavigationProperty Name="FraisSupplemAdmissions" Relationship="NLHModel.FK_FraisSupplemAdmission_FraisSupplementaires" FromRole="FraisSupplementaires" ToRole="FraisSupplemAdmission" />
+        </EntityType>
+        <EntityType Name="Lit">
+          <Key>
+            <PropertyRef Name="IDLits" />
+          </Key>
+          <Property Name="IDLits" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDDepartement" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="TypeLit" Type="String" MaxLength="11" Unicode="true" FixedLength="true" Nullable="false" />
+          <NavigationProperty Name="Departement" Relationship="NLHModel.FK_Lits_Departemets" FromRole="Lits" ToRole="Departements" />
+          <NavigationProperty Name="FichierAdmissions" Relationship="NLHModel.FK_FichierAdmission_Lits" FromRole="Lits" ToRole="FichierAdmission" />
+          <Property Type="Boolean" Name="Disponible" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="IDPatient" />
+          </Key>
+          <Property Name="IDPatient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPersonne" Type="Int32" Nullable="false" />
+          <Property Name="ParentPlusProche" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="FichierAdmissions" Relationship="NLHModel.FK_FichierAdmission_Patients" FromRole="Patients" ToRole="FichierAdmission" />
+          <NavigationProperty Name="Personne" Relationship="NLHModel.FK_Patients_Personnes" FromRole="Patients" ToRole="Personnes" />
+        </EntityType>
+        <EntityType Name="Personne">
+          <Key>
+            <PropertyRef Name="IDPersonne" />
+          </Key>
+          <Property Name="IDPersonne" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Prenom" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+          <Property Name="NomFamille" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="Adresse" Type="String" Nullable="false" MaxLength="35" Unicode="true" FixedLength="false" />
+          <Property Name="Ville" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="Province" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="true" />
+          <Property Name="CodePostal" Type="String" Nullable="false" MaxLength="6" Unicode="true" FixedLength="true" />
+          <Property Name="TelephonePrinc" Type="String" Nullable="false" MaxLength="14" Unicode="true" FixedLength="true" />
+          <Property Name="TelephoneAutre" Type="String" MaxLength="14" Unicode="true" FixedLength="true" />
+          <Property Name="DateNaissance" Type="DateTime" Nullable="false" />
+          <Property Name="Sexe" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="true" />
+          <Property Name="AssuranceMaladie" Type="String" Nullable="false" MaxLength="14" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Employes" Relationship="NLHModel.FK_Employes_Personnes" FromRole="Personnes" ToRole="Employes" />
+          <NavigationProperty Name="Patients" Relationship="NLHModel.FK_Patients_Personnes" FromRole="Personnes" ToRole="Patients" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Employes_Departemets">
+          <End Role="Departements" Type="NLHModel.Departement" Multiplicity="1" />
+          <End Role="Employes" Type="NLHModel.Employe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departements">
+              <PropertyRef Name="IDDepartement" />
+            </Principal>
+            <Dependent Role="Employes">
+              <PropertyRef Name="IDDepartement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Lits_Departemets">
+          <End Role="Departements" Type="NLHModel.Departement" Multiplicity="1" />
+          <End Role="Lits" Type="NLHModel.Lit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departements">
+              <PropertyRef Name="IDDepartement" />
+            </Principal>
+            <Dependent Role="Lits">
+              <PropertyRef Name="IDDepartement" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employes_Personnes">
+          <End Role="Personnes" Type="NLHModel.Personne" Multiplicity="1" />
+          <End Role="Employes" Type="NLHModel.Employe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personnes">
+              <PropertyRef Name="IDPersonne" />
+            </Principal>
+            <Dependent Role="Employes">
+              <PropertyRef Name="IDPersonne" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FichierAdmission_Employes">
+          <End Role="Employes" Type="NLHModel.Employe" Multiplicity="1" />
+          <End Role="FichierAdmission" Type="NLHModel.FichierAdmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employes">
+              <PropertyRef Name="IDEmploye" />
+            </Principal>
+            <Dependent Role="FichierAdmission">
+              <PropertyRef Name="IDEmploye" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FichierAdmission_Lits">
+          <End Role="Lits" Type="NLHModel.Lit" Multiplicity="1" />
+          <End Role="FichierAdmission" Type="NLHModel.FichierAdmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lits">
+              <PropertyRef Name="IDLits" />
+            </Principal>
+            <Dependent Role="FichierAdmission">
+              <PropertyRef Name="IDLit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FichierAdmission_Patients">
+          <End Role="Patients" Type="NLHModel.Patient" Multiplicity="1" />
+          <End Role="FichierAdmission" Type="NLHModel.FichierAdmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="IDPatient" />
+            </Principal>
+            <Dependent Role="FichierAdmission">
+              <PropertyRef Name="IDPatient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FraisSupplemAdmission_FichierAdmission">
+          <End Role="FichierAdmission" Type="NLHModel.FichierAdmission" Multiplicity="1" />
+          <End Role="FraisSupplemAdmission" Type="NLHModel.FraisSupplemAdmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FichierAdmission">
+              <PropertyRef Name="IDAdmission" />
+            </Principal>
+            <Dependent Role="FraisSupplemAdmission">
+              <PropertyRef Name="IDAdmission" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FraisSupplemAdmission_FraisSupplementaires">
+          <End Role="FraisSupplementaires" Type="NLHModel.FraisSupplementaire" Multiplicity="1" />
+          <End Role="FraisSupplemAdmission" Type="NLHModel.FraisSupplemAdmission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FraisSupplementaires">
+              <PropertyRef Name="IDFraisSupplementaires" />
+            </Principal>
+            <Dependent Role="FraisSupplemAdmission">
+              <PropertyRef Name="IDFraisSupplementaires" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_Personnes">
+          <End Role="Personnes" Type="NLHModel.Personne" Multiplicity="1" />
+          <End Role="Patients" Type="NLHModel.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personnes">
+              <PropertyRef Name="IDPersonne" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="IDPersonne" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Poste">
+          <Key>
+            <PropertyRef Name="IDPoste" />
+          </Key>
+          <Property Type="Int32" Name="IDPoste" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employes" Relationship="NLHModel.FK_Employes_Poste" FromRole="Poste" ToRole="Employe" />
+        </EntityType>
+        <Association Name="FK_Employes_Poste">
+          <End Type="NLHModel.Poste" Role="Poste" Multiplicity="1" />
+          <End Type="NLHModel.Employe" Role="Employe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poste">
+              <PropertyRef Name="IDPoste" />
+            </Principal>
+            <Dependent Role="Employe">
+              <PropertyRef Name="IDPoste" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ViewLitsDepartement">
+          <Key>
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="NomDepartement" />
+            <PropertyRef Name="TypeLit" />
+            <PropertyRef Name="Disponible" />
+            <PropertyRef Name="IDLits" />
+            <PropertyRef Name="IDDepartement" />
+            <PropertyRef Name="LitsAttribue" />
+          </Key>
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NomDepartement" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeLit" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Disponible" Nullable="false" />
+          <Property Type="Int32" Name="IDLits" Nullable="false" />
+          <Property Type="Int32" Name="IDDepartement" Nullable="false" />
+          <Property Type="String" Name="LitsAttribue" Nullable="false" MaxLength="68" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViewMedecin">
+          <Key>
+            <PropertyRef Name="IDEmploye" />
+            <PropertyRef Name="IDDepartement" />
+            <PropertyRef Name="IDPoste" />
+            <PropertyRef Name="Utilisateur" />
+            <PropertyRef Name="MotdePasse" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="NomMedecin" />
+          </Key>
+          <Property Type="Int32" Name="IDEmploye" Nullable="false" />
+          <Property Type="Int32" Name="IDDepartement" Nullable="false" />
+          <Property Type="Int32" Name="IDPoste" Nullable="false" />
+          <Property Type="String" Name="Utilisateur" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MotdePasse" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NomMedecin" Nullable="false" MaxLength="89" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViewPatient">
+          <Key>
+            <PropertyRef Name="IDPersonne" />
+            <PropertyRef Name="Prenom" />
+            <PropertyRef Name="NomFamille" />
+            <PropertyRef Name="Adresse" />
+            <PropertyRef Name="CodePostal" />
+            <PropertyRef Name="Ville" />
+            <PropertyRef Name="Province" />
+            <PropertyRef Name="Sexe" />
+            <PropertyRef Name="DateNaissance" />
+            <PropertyRef Name="TelephonePrinc" />
+            <PropertyRef Name="AssuranceMaladie" />
+            <PropertyRef Name="IDPatient" />
+            <PropertyRef Name="ParentPlusProche" />
+            <PropertyRef Name="NomComplet" />
+          </Key>
+          <Property Type="Int32" Name="IDPersonne" Nullable="false" />
+          <Property Type="String" Name="Prenom" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NomFamille" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Adresse" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CodePostal" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Ville" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Province" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sexe" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Type="DateTime" Name="DateNaissance" Nullable="false" />
+          <Property Type="String" Name="TelephonePrinc" Nullable="false" MaxLength="14" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="TelephoneAutre" MaxLength="14" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="AssuranceMaladie" Nullable="false" MaxLength="14" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="IDPatient" Nullable="false" />
+          <Property Type="String" Name="ParentPlusProche" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NomComplet" Nullable="false" MaxLength="52" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViewEmploye">
+          <Key>
+            <PropertyRef Name="IDPersonne" />
+            <PropertyRef Name="Prenom" />
+            <PropertyRef Name="NomFamille" />
+            <PropertyRef Name="Adresse" />
+            <PropertyRef Name="CodePostal" />
+            <PropertyRef Name="Ville" />
+            <PropertyRef Name="Province" />
+            <PropertyRef Name="Sexe" />
+            <PropertyRef Name="DateNaissance" />
+            <PropertyRef Name="TelephonePrinc" />
+            <PropertyRef Name="AssuranceMaladie" />
+            <PropertyRef Name="IDEmploye" />
+            <PropertyRef Name="IDDepartement" />
+            <PropertyRef Name="AssuranceSocial" />
+            <PropertyRef Name="Utilisateur" />
+            <PropertyRef Name="MotdePasse" />
+            <PropertyRef Name="IDPoste" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Type="Int32" Name="IDPersonne" Nullable="false" />
+          <Property Type="String" Name="Prenom" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NomFamille" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Adresse" Nullable="false" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CodePostal" Nullable="false" MaxLength="6" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Ville" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Province" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Sexe" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Type="DateTime" Name="DateNaissance" Nullable="false" />
+          <Property Type="String" Name="TelephonePrinc" Nullable="false" MaxLength="14" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="TelephoneAutre" MaxLength="14" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="AssuranceMaladie" Nullable="false" MaxLength="14" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="IDEmploye" Nullable="false" />
+          <Property Type="Int32" Name="IDDepartement" Nullable="false" />
+          <Property Type="String" Name="AssuranceSocial" Nullable="false" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Utilisateur" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MotdePasse" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="IDPoste" Nullable="false" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViewFichierAdmission">
+          <Key>
+            <PropertyRef Name="IDAdmission" />
+            <PropertyRef Name="IDPatient" />
+            <PropertyRef Name="NomPatient" />
+            <PropertyRef Name="IDEmploye" />
+            <PropertyRef Name="IDLit" />
+            <PropertyRef Name="DateAdmission" />
+            <PropertyRef Name="NomMedecin" />
+            <PropertyRef Name="LitAttribue" />
+            <PropertyRef Name="TypeLit" />
+          </Key>
+          <Property Type="Int32" Name="IDAdmission" Nullable="false" />
+          <Property Type="Int32" Name="IDPatient" Nullable="false" />
+          <Property Type="String" Name="NomPatient" Nullable="false" MaxLength="52" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="IDEmploye" Nullable="false" />
+          <Property Type="Int32" Name="IDLit" Nullable="false" />
+          <Property Type="DateTime" Name="DateAdmission" Nullable="false" />
+          <Property Type="DateTime" Name="DateConge" />
+          <Property Type="String" Name="NomMedecin" Nullable="false" MaxLength="89" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LitAttribue" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeLit" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NLHModelStoreContainer" CdmEntityContainer="NLHEntities1">
+          <EntitySetMapping Name="Departements">
+            <EntityTypeMapping TypeName="NLHModel.Departement">
+              <MappingFragment StoreEntitySet="Departements">
+                <ScalarProperty Name="IDDepartement" ColumnName="IDDepartement" />
+                <ScalarProperty Name="NomDepartement" ColumnName="NomDepartement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employes">
+            <EntityTypeMapping TypeName="NLHModel.Employe">
+              <MappingFragment StoreEntitySet="Employes">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IDPoste" ColumnName="IDPoste" />
+                <ScalarProperty Name="IDEmploye" ColumnName="IDEmploye" />
+                <ScalarProperty Name="IDPersonne" ColumnName="IDPersonne" />
+                <ScalarProperty Name="IDDepartement" ColumnName="IDDepartement" />
+                <ScalarProperty Name="AssuranceSocial" ColumnName="AssuranceSocial" />
+                <ScalarProperty Name="Utilisateur" ColumnName="Utilisateur" />
+                <ScalarProperty Name="MotdePasse" ColumnName="MotdePasse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FichierAdmissions">
+            <EntityTypeMapping TypeName="NLHModel.FichierAdmission">
+              <MappingFragment StoreEntitySet="FichierAdmission">
+                <ScalarProperty Name="IDAdmission" ColumnName="IDAdmission" />
+                <ScalarProperty Name="IDPatient" ColumnName="IDPatient" />
+                <ScalarProperty Name="IDEmploye" ColumnName="IDEmploye" />
+                <ScalarProperty Name="IDLit" ColumnName="IDLit" />
+                <ScalarProperty Name="DateAdmission" ColumnName="DateAdmission" />
+                <ScalarProperty Name="DateConge" ColumnName="DateConge" />
+                <ScalarProperty Name="AssurancePrivee" ColumnName="AssurancePrivee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FraisSupplemAdmissions">
+            <EntityTypeMapping TypeName="NLHModel.FraisSupplemAdmission">
+              <MappingFragment StoreEntitySet="FraisSupplemAdmission">
+                <ScalarProperty Name="IDFraisAdminission" ColumnName="IDFraisAdminission" />
+                <ScalarProperty Name="IDAdmission" ColumnName="IDAdmission" />
+                <ScalarProperty Name="IDFraisSupplementaires" ColumnName="IDFraisSupplementaires" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FraisSupplementaires">
+            <EntityTypeMapping TypeName="NLHModel.FraisSupplementaire">
+              <MappingFragment StoreEntitySet="FraisSupplementaires">
+                <ScalarProperty Name="IDFraisSupplementaires" ColumnName="IDFraisSupplementaires" />
+                <ScalarProperty Name="FraisTelephone" ColumnName="FraisTelephone" />
+                <ScalarProperty Name="FraisTV" ColumnName="FraisTV" />
+                <ScalarProperty Name="FraisLitSemiPrivee" ColumnName="FraisLitSemiPrivee" />
+                <ScalarProperty Name="FraisLitPrivee" ColumnName="FraisLitPrivee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lits">
+            <EntityTypeMapping TypeName="NLHModel.Lit">
+              <MappingFragment StoreEntitySet="Lits">
+                <ScalarProperty Name="Disponible" ColumnName="Disponible" />
+                <ScalarProperty Name="IDLits" ColumnName="IDLits" />
+                <ScalarProperty Name="IDDepartement" ColumnName="IDDepartement" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TypeLit" ColumnName="TypeLit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="NLHModel.Patient">
+              <MappingFragment StoreEntitySet="Patients">
+                <ScalarProperty Name="IDPatient" ColumnName="IDPatient" />
+                <ScalarProperty Name="IDPersonne" ColumnName="IDPersonne" />
+                <ScalarProperty Name="ParentPlusProche" ColumnName="ParentPlusProche" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personnes">
+            <EntityTypeMapping TypeName="NLHModel.Personne">
+              <MappingFragment StoreEntitySet="Personnes">
+                <ScalarProperty Name="IDPersonne" ColumnName="IDPersonne" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="NomFamille" ColumnName="NomFamille" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="Ville" ColumnName="Ville" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="CodePostal" ColumnName="CodePostal" />
+                <ScalarProperty Name="TelephonePrinc" ColumnName="TelephonePrinc" />
+                <ScalarProperty Name="TelephoneAutre" ColumnName="TelephoneAutre" />
+                <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+                <ScalarProperty Name="Sexe" ColumnName="Sexe" />
+                <ScalarProperty Name="AssuranceMaladie" ColumnName="AssuranceMaladie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="NLHModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Postes">
+            <EntityTypeMapping TypeName="NLHModel.Poste">
+              <MappingFragment StoreEntitySet="Poste">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IDPoste" ColumnName="IDPoste" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewLitsDepartements">
+            <EntityTypeMapping TypeName="NLHModel.ViewLitsDepartement">
+              <MappingFragment StoreEntitySet="ViewLitsDepartement">
+                <ScalarProperty Name="LitsAttribue" ColumnName="LitsAttribue" />
+                <ScalarProperty Name="IDDepartement" ColumnName="IDDepartement" />
+                <ScalarProperty Name="IDLits" ColumnName="IDLits" />
+                <ScalarProperty Name="Disponible" ColumnName="Disponible" />
+                <ScalarProperty Name="TypeLit" ColumnName="TypeLit" />
+                <ScalarProperty Name="NomDepartement" ColumnName="NomDepartement" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewMedecins">
+            <EntityTypeMapping TypeName="NLHModel.ViewMedecin">
+              <MappingFragment StoreEntitySet="ViewMedecin">
+                <ScalarProperty Name="NomMedecin" ColumnName="NomMedecin" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="MotdePasse" ColumnName="MotdePasse" />
+                <ScalarProperty Name="Utilisateur" ColumnName="Utilisateur" />
+                <ScalarProperty Name="IDPoste" ColumnName="IDPoste" />
+                <ScalarProperty Name="IDDepartement" ColumnName="IDDepartement" />
+                <ScalarProperty Name="IDEmploye" ColumnName="IDEmploye" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewPatients">
+            <EntityTypeMapping TypeName="NLHModel.ViewPatient">
+              <MappingFragment StoreEntitySet="ViewPatient">
+                <ScalarProperty Name="NomComplet" ColumnName="NomComplet" />
+                <ScalarProperty Name="ParentPlusProche" ColumnName="ParentPlusProche" />
+                <ScalarProperty Name="IDPatient" ColumnName="IDPatient" />
+                <ScalarProperty Name="AssuranceMaladie" ColumnName="AssuranceMaladie" />
+                <ScalarProperty Name="TelephoneAutre" ColumnName="TelephoneAutre" />
+                <ScalarProperty Name="TelephonePrinc" ColumnName="TelephonePrinc" />
+                <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+                <ScalarProperty Name="Sexe" ColumnName="Sexe" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Ville" ColumnName="Ville" />
+                <ScalarProperty Name="CodePostal" ColumnName="CodePostal" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="NomFamille" ColumnName="NomFamille" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="IDPersonne" ColumnName="IDPersonne" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewEmployes">
+            <EntityTypeMapping TypeName="NLHModel.ViewEmploye">
+              <MappingFragment StoreEntitySet="ViewEmploye">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IDPoste" ColumnName="IDPoste" />
+                <ScalarProperty Name="MotdePasse" ColumnName="MotdePasse" />
+                <ScalarProperty Name="Utilisateur" ColumnName="Utilisateur" />
+                <ScalarProperty Name="AssuranceSocial" ColumnName="AssuranceSocial" />
+                <ScalarProperty Name="IDDepartement" ColumnName="IDDepartement" />
+                <ScalarProperty Name="IDEmploye" ColumnName="IDEmploye" />
+                <ScalarProperty Name="AssuranceMaladie" ColumnName="AssuranceMaladie" />
+                <ScalarProperty Name="TelephoneAutre" ColumnName="TelephoneAutre" />
+                <ScalarProperty Name="TelephonePrinc" ColumnName="TelephonePrinc" />
+                <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+                <ScalarProperty Name="Sexe" ColumnName="Sexe" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Ville" ColumnName="Ville" />
+                <ScalarProperty Name="CodePostal" ColumnName="CodePostal" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="NomFamille" ColumnName="NomFamille" />
+                <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+                <ScalarProperty Name="IDPersonne" ColumnName="IDPersonne" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewFichierAdmissions">
+            <EntityTypeMapping TypeName="NLHModel.ViewFichierAdmission">
+              <MappingFragment StoreEntitySet="ViewFichierAdmission">
+                <ScalarProperty Name="TypeLit" ColumnName="TypeLit" />
+                <ScalarProperty Name="LitAttribue" ColumnName="LitAttribue" />
+                <ScalarProperty Name="NomMedecin" ColumnName="NomMedecin" />
+                <ScalarProperty Name="DateConge" ColumnName="DateConge" />
+                <ScalarProperty Name="DateAdmission" ColumnName="DateAdmission" />
+                <ScalarProperty Name="IDLit" ColumnName="IDLit" />
+                <ScalarProperty Name="IDEmploye" ColumnName="IDEmploye" />
+                <ScalarProperty Name="NomPatient" ColumnName="NomPatient" />
+                <ScalarProperty Name="IDPatient" ColumnName="IDPatient" />
+                <ScalarProperty Name="IDAdmission" ColumnName="IDAdmission" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="NLH">
+        <EntityTypeShape EntityType="NLHModel.Departement" Width="1.5" PointX="5.5" PointY="4.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.Employe" Width="1.5" PointX="3.25" PointY="3.25" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.FichierAdmission" Width="1.5" PointX="5.5" PointY="0.875" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.FraisSupplemAdmission" Width="1.5" PointX="7.875" PointY="0.75" Height="1.9802864583333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.FraisSupplementaire" Width="1.5" PointX="10" PointY="0.875" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.Lit" Width="1.5" PointX="7.875" PointY="3.375" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.Patient" Width="1.5" PointX="3.25" PointY="0.875" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.Personne" Width="1.5" PointX="0.75" PointY="0.75" Height="3.7109993489583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="NLHModel.sysdiagram" Width="1.5" PointX="10" PointY="3.75" Height="1.9802864583333317" IsExpanded="true" />
+        <AssociationConnector Association="NLHModel.FK_Employes_Departemets" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.5" PointY="5.6439925130208337" />
+          <ConnectorPoint PointX="4.75" PointY="5.6439925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="NLHModel.FK_Lits_Departemets" ManuallyRouted="false">
+          <ConnectorPoint PointX="7" PointY="5.1487939453125" />
+          <ConnectorPoint PointX="7.875" PointY="5.1487939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="NLHModel.FK_Employes_Personnes" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.8554996744791659" />
+          <ConnectorPoint PointX="3.25" PointY="3.8554996744791659" />
+        </AssociationConnector>
+        <AssociationConnector Association="NLHModel.FK_FichierAdmission_Employes" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.75" PointY="3.6295475260416659" />
+          <ConnectorPoint PointX="5.5" PointY="3.6295475260416659" />
+        </AssociationConnector>
+        <AssociationConnector Association="NLHModel.FK_FichierAdmission_Lits" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.875" PointY="3.6920475260416659" />
+          <ConnectorPoint PointX="7" PointY="3.6920475260416659" />
+        </AssociationConnector>
+        <AssociationConnector Association="NLHModel.FK_FichierAdmission_Patients" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.75" PointY="1.8651432291666659" />
+          <ConnectorPoint PointX="5.5" PointY="1.8651432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="NLHModel.FK_FraisSupplemAdmission_FichierAdmission" ManuallyRouted="false">
+          <ConnectorPoint PointX="7" PointY="1.8026432291666663" />
+          <ConnectorPoint PointX="7.875" PointY="1.8026432291666663" />
+        </AssociationConnector>
+        <AssociationConnector Association="NLHModel.FK_FraisSupplemAdmission_FraisSupplementaires" ManuallyRouted="false">
+          <ConnectorPoint PointX="10" PointY="1.8026432291666663" />
+          <ConnectorPoint PointX="9.375" PointY="1.8026432291666663" />
+        </AssociationConnector>
+        <AssociationConnector Association="NLHModel.FK_Patients_Personnes" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="1.8651432291666659" />
+          <ConnectorPoint PointX="3.25" PointY="1.8651432291666659" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="NLHModel.Poste" Width="1.5" PointX="0.75" PointY="5" Height="1.5956835937499996" />
+        <AssociationConnector Association="NLHModel.FK_Employes_Poste" >
+          <ConnectorPoint PointX="2.25" PointY="5.7881982421875" />
+          <ConnectorPoint PointX="3.25" PointY="5.7881982421875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="NLHModel.ViewLitsDepartement" Width="1.875" PointX="7.5" PointY="7.5" Height="2.3648893229166656" />
+        <EntityTypeShape EntityType="NLHModel.ViewMedecin" Width="1.75" PointX="5.375" PointY="7.5" Height="2.3648893229166656" />
+        <EntityTypeShape EntityType="NLHModel.ViewPatient" Width="1.75" PointX="3.125" PointY="7.375" Height="3.9033007812499996" />
+        <EntityTypeShape EntityType="NLHModel.ViewEmploye" Width="2" PointX="0.75" PointY="7.25" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="NLHModel.ViewFichierAdmission" Width="1.75" PointX="9.75" PointY="7.5" Height="2.3648893229166674" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

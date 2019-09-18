@@ -1,0 +1,15 @@
+﻿<Window x:Class="NLH.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="428">
+    <Grid>
+        <Button Content="Quitter" Height="29" Margin="0,259,70,0" Name="buttonQuitter" VerticalAlignment="Top" HorizontalAlignment="Right" Width="90" Click="buttonQuitter_Click" TabIndex="4" />
+        <Button Content="OK" Height="29" HorizontalAlignment="Left" Margin="70,259,0,0" Name="buttonOK" VerticalAlignment="Top" Width="90" ClipToBounds="False" Click="buttonOK_Click" TabIndex="3" />
+        <Label Content="Bienvenue" Height="39" Margin="127,21,127,0" Name="lblBienvenue" VerticalAlignment="Top" FontSize="22" HorizontalContentAlignment="Center" />
+        <Label Content="NorthernLights Hospital" Margin="59,66,59,203" Name="lblNorthernLightsHospital" FontSize="18" HorizontalContentAlignment="Center" />
+        <TextBox Height="29" Margin="180,144,0,0" Name="txtUtilisateur" VerticalAlignment="Top" TextAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="154" TabIndex="1" />
+        <Label Content="Nom d'utilisateur" Height="29" Margin="73,0,229,138" Name="lblNomUtilisateur" VerticalAlignment="Bottom" />
+        <Label Content="Mot de passe" Height="29" HorizontalAlignment="Left" Margin="73,188,0,0" Name="lblMotdepasse" VerticalAlignment="Top" Width="90" />
+        <PasswordBox Height="29" Margin="180,188,0,0" Name="passwordMotdePasse" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="154" TabIndex="2" />
+    </Grid>
+</Window>
