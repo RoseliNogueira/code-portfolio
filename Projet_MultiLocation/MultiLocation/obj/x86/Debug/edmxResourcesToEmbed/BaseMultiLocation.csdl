@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MLE6327Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="MLE6327Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Audits" EntityType="MLE6327Model.Audit" />
+    <EntitySet Name="Clients" EntityType="MLE6327Model.Client" />
+    <EntitySet Name="Couleurs" EntityType="MLE6327Model.Couleur" />
+    <EntitySet Name="Locations" EntityType="MLE6327Model.Location" />
+    <EntitySet Name="Modeles" EntityType="MLE6327Model.Modele" />
+    <EntitySet Name="Paiements" EntityType="MLE6327Model.Paiement" />
+    <EntitySet Name="sysdiagrams" EntityType="MLE6327Model.sysdiagram" />
+    <EntitySet Name="TermesLocations" EntityType="MLE6327Model.TermesLocation" />
+    <EntitySet Name="Types" EntityType="MLE6327Model.Type" />
+    <EntitySet Name="Vehicules" EntityType="MLE6327Model.Vehicule" />
+    <EntitySet Name="ViewLocations" EntityType="MLE6327Model.ViewLocation" />
+    <AssociationSet Name="FK_Audits_Locations" Association="MLE6327Model.FK_Audits_Locations">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="Audits" EntitySet="Audits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Locations_Clients" Association="MLE6327Model.FK_Locations_Clients">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Locations" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicules_Couleurs" Association="MLE6327Model.FK_Vehicules_Couleurs">
+      <End Role="Couleurs" EntitySet="Couleurs" />
+      <End Role="Vehicules" EntitySet="Vehicules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Locations_TermesLocations" Association="MLE6327Model.FK_Locations_TermesLocations">
+      <End Role="TermesLocations" EntitySet="TermesLocations" />
+      <End Role="Locations" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Locations_Vehicules" Association="MLE6327Model.FK_Locations_Vehicules">
+      <End Role="Vehicules" EntitySet="Vehicules" />
+      <End Role="Locations" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Paiement_Locations" Association="MLE6327Model.FK_Paiement_Locations">
+      <End Role="Locations" EntitySet="Locations" />
+      <End Role="Paiements" EntitySet="Paiements" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicules_Modeles" Association="MLE6327Model.FK_Vehicules_Modeles">
+      <End Role="Modeles" EntitySet="Modeles" />
+      <End Role="Vehicules" EntitySet="Vehicules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicules_Types" Association="MLE6327Model.FK_Vehicules_Types">
+      <End Role="Types" EntitySet="Types" />
+      <End Role="Vehicules" EntitySet="Vehicules" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Audit">
+    <Key>
+      <PropertyRef Name="CodeLocation" />
+      <PropertyRef Name="CodeClient" />
+      <PropertyRef Name="AncienneDateDebutLocation" />
+      <PropertyRef Name="NouvelleDateDebutLocation" />
+      <PropertyRef Name="AncienneDatePremierPaiement" />
+      <PropertyRef Name="NouvelleDatePremierPaiement" />
+      <PropertyRef Name="AncienneMontant" />
+      <PropertyRef Name="NouvelleMontant" />
+      <PropertyRef Name="AncienneNoPaiementMensuel" />
+      <PropertyRef Name="NouvelleNoPaiementMensuel" />
+    </Key>
+    <Property Name="CodeLocation" Type="Int32" Nullable="false" />
+    <Property Name="CodeClient" Type="Int32" Nullable="false" />
+    <Property Name="AncienneDateDebutLocation" Type="DateTime" Nullable="false" />
+    <Property Name="NouvelleDateDebutLocation" Type="DateTime" Nullable="false" />
+    <Property Name="AncienneDatePremierPaiement" Type="DateTime" Nullable="false" />
+    <Property Name="NouvelleDatePremierPaiement" Type="DateTime" Nullable="false" />
+    <Property Name="AncienneMontant" Type="Single" Nullable="false" />
+    <Property Name="NouvelleMontant" Type="Single" Nullable="false" />
+    <Property Name="AncienneNoPaiementMensuel" Type="Int32" Nullable="false" />
+    <Property Name="NouvelleNoPaiementMensuel" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Location" Relationship="MLE6327Model.FK_Audits_Locations" FromRole="Audits" ToRole="Locations" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="CodeClient" />
+    </Key>
+    <Property Name="CodeClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Prenom" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="Nom" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="Adresse" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="Ville" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="Province" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="CodePostal" Type="String" Nullable="false" MaxLength="7" Unicode="false" FixedLength="true" />
+    <Property Name="NoTelephone" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="Locations" Relationship="MLE6327Model.FK_Locations_Clients" FromRole="Clients" ToRole="Locations" />
+  </EntityType>
+  <EntityType Name="Couleur">
+    <Key>
+      <PropertyRef Name="CodeCouleur" />
+    </Key>
+    <Property Name="CodeCouleur" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Vehicules" Relationship="MLE6327Model.FK_Vehicules_Couleurs" FromRole="Couleurs" ToRole="Vehicules" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="CodeLocation" />
+    </Key>
+    <Property Name="CodeLocation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodeClient" Type="Int32" Nullable="false" />
+    <Property Name="DateDebutLocation" Type="DateTime" Nullable="false" />
+    <Property Name="DatePremierPaiement" Type="DateTime" Nullable="false" />
+    <Property Name="Montant" Type="Single" Nullable="false" />
+    <Property Name="NoPaiementMensuel" Type="Int32" Nullable="false" />
+    <Property Name="NIV" Type="String" Nullable="false" MaxLength="23" Unicode="false" FixedLength="false" />
+    <Property Name="CodeTermeLocation" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Audits" Relationship="MLE6327Model.FK_Audits_Locations" FromRole="Locations" ToRole="Audits" />
+    <NavigationProperty Name="Client" Relationship="MLE6327Model.FK_Locations_Clients" FromRole="Locations" ToRole="Clients" />
+    <NavigationProperty Name="TermesLocation" Relationship="MLE6327Model.FK_Locations_TermesLocations" FromRole="Locations" ToRole="TermesLocations" />
+    <NavigationProperty Name="Vehicule" Relationship="MLE6327Model.FK_Locations_Vehicules" FromRole="Locations" ToRole="Vehicules" />
+    <NavigationProperty Name="Paiements" Relationship="MLE6327Model.FK_Paiement_Locations" FromRole="Locations" ToRole="Paiements" />
+  </EntityType>
+  <EntityType Name="Modele">
+    <Key>
+      <PropertyRef Name="CodeModele" />
+    </Key>
+    <Property Name="CodeModele" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Vehicules" Relationship="MLE6327Model.FK_Vehicules_Modeles" FromRole="Modeles" ToRole="Vehicules" />
+  </EntityType>
+  <EntityType Name="Paiement">
+    <Key>
+      <PropertyRef Name="CodePaiement" />
+    </Key>
+    <Property Name="CodePaiement" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DatePaiement" Type="DateTime" Nullable="false" />
+    <Property Name="Montant" Type="Single" Nullable="false" />
+    <Property Name="CodeLocation" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Location" Relationship="MLE6327Model.FK_Paiement_Locations" FromRole="Paiements" ToRole="Locations" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TermesLocation">
+    <Key>
+      <PropertyRef Name="CodeTermesLocation" />
+    </Key>
+    <Property Name="CodeTermesLocation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DureeLocation" Type="Byte" Nullable="false" />
+    <Property Name="KmMaxPermis" Type="Int32" Nullable="false" />
+    <Property Name="SurprimeKmExcedentaire" Type="Single" Nullable="false" />
+    <NavigationProperty Name="Locations" Relationship="MLE6327Model.FK_Locations_TermesLocations" FromRole="TermesLocations" ToRole="Locations" />
+  </EntityType>
+  <EntityType Name="Type">
+    <Key>
+      <PropertyRef Name="CodeType" />
+    </Key>
+    <Property Name="CodeType" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripton" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Vehicules" Relationship="MLE6327Model.FK_Vehicules_Types" FromRole="Types" ToRole="Vehicules" />
+  </EntityType>
+  <EntityType Name="Vehicule">
+    <Key>
+      <PropertyRef Name="NIV" />
+    </Key>
+    <Property Name="NIV" Type="String" Nullable="false" MaxLength="23" Unicode="false" FixedLength="false" />
+    <Property Name="CodeModele" Type="Int32" Nullable="false" />
+    <Property Name="CodeType" Type="Int32" Nullable="false" />
+    <Property Name="CodeCouleur" Type="Int32" Nullable="false" />
+    <Property Name="Annee" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="KmOdometre" Type="Int32" Nullable="false" />
+    <Property Name="VehiculeDejaLoue" Type="Boolean" Nullable="false" />
+    <Property Name="ValeurActuelleVehicule" Type="Single" Nullable="false" />
+    <Property Name="TransmissionAutomatique" Type="Boolean" Nullable="false" />
+    <Property Name="AirClimatisee" Type="Boolean" Nullable="false" />
+    <Property Name="AntiDemarreur" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Couleur" Relationship="MLE6327Model.FK_Vehicules_Couleurs" FromRole="Vehicules" ToRole="Couleurs" />
+    <NavigationProperty Name="Locations" Relationship="MLE6327Model.FK_Locations_Vehicules" FromRole="Vehicules" ToRole="Locations" />
+    <NavigationProperty Name="Modele" Relationship="MLE6327Model.FK_Vehicules_Modeles" FromRole="Vehicules" ToRole="Modeles" />
+    <NavigationProperty Name="Type" Relationship="MLE6327Model.FK_Vehicules_Types" FromRole="Vehicules" ToRole="Types" />
+  </EntityType>
+  <EntityType Name="ViewLocation">
+    <Key>
+      <PropertyRef Name="Nom" />
+      <PropertyRef Name="NoTelephone" />
+      <PropertyRef Name="NIV" />
+      <PropertyRef Name="Modele" />
+      <PropertyRef Name="Annee" />
+      <PropertyRef Name="DatePaiement" />
+      <PropertyRef Name="Montant" />
+    </Key>
+    <Property Name="Nom" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="NoTelephone" Type="String" Nullable="false" MaxLength="14" Unicode="false" FixedLength="true" />
+    <Property Name="NIV" Type="String" Nullable="false" MaxLength="23" Unicode="false" FixedLength="false" />
+    <Property Name="Modele" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Annee" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="DatePaiement" Type="DateTime" Nullable="false" />
+    <Property Name="Montant" Type="Single" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Audits_Locations">
+    <End Role="Locations" Type="MLE6327Model.Location" Multiplicity="1" />
+    <End Role="Audits" Type="MLE6327Model.Audit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="CodeLocation" />
+      </Principal>
+      <Dependent Role="Audits">
+        <PropertyRef Name="CodeLocation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Locations_Clients">
+    <End Role="Clients" Type="MLE6327Model.Client" Multiplicity="1" />
+    <End Role="Locations" Type="MLE6327Model.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="CodeClient" />
+      </Principal>
+      <Dependent Role="Locations">
+        <PropertyRef Name="CodeClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicules_Couleurs">
+    <End Role="Couleurs" Type="MLE6327Model.Couleur" Multiplicity="1" />
+    <End Role="Vehicules" Type="MLE6327Model.Vehicule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Couleurs">
+        <PropertyRef Name="CodeCouleur" />
+      </Principal>
+      <Dependent Role="Vehicules">
+        <PropertyRef Name="CodeCouleur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Locations_TermesLocations">
+    <End Role="TermesLocations" Type="MLE6327Model.TermesLocation" Multiplicity="1" />
+    <End Role="Locations" Type="MLE6327Model.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TermesLocations">
+        <PropertyRef Name="CodeTermesLocation" />
+      </Principal>
+      <Dependent Role="Locations">
+        <PropertyRef Name="CodeTermeLocation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Locations_Vehicules">
+    <End Role="Vehicules" Type="MLE6327Model.Vehicule" Multiplicity="1" />
+    <End Role="Locations" Type="MLE6327Model.Location" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehicules">
+        <PropertyRef Name="NIV" />
+      </Principal>
+      <Dependent Role="Locations">
+        <PropertyRef Name="NIV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Paiement_Locations">
+    <End Role="Locations" Type="MLE6327Model.Location" Multiplicity="1" />
+    <End Role="Paiements" Type="MLE6327Model.Paiement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Locations">
+        <PropertyRef Name="CodeLocation" />
+      </Principal>
+      <Dependent Role="Paiements">
+        <PropertyRef Name="CodeLocation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicules_Modeles">
+    <End Role="Modeles" Type="MLE6327Model.Modele" Multiplicity="1" />
+    <End Role="Vehicules" Type="MLE6327Model.Vehicule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modeles">
+        <PropertyRef Name="CodeModele" />
+      </Principal>
+      <Dependent Role="Vehicules">
+        <PropertyRef Name="CodeModele" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicules_Types">
+    <End Role="Types" Type="MLE6327Model.Type" Multiplicity="1" />
+    <End Role="Vehicules" Type="MLE6327Model.Vehicule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Types">
+        <PropertyRef Name="CodeType" />
+      </Principal>
+      <Dependent Role="Vehicules">
+        <PropertyRef Name="CodeType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

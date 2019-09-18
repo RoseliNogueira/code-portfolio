@@ -1,0 +1,5 @@
+Guichet ATM Numéro : 00001; -- Solde du guichet : $8720
+Compte Chèque Numéro : 10101; -- Solde Compte : $8905
+Compte Chèque Numéro : 10102; -- Solde Compte : $1500
+Compte Épargne Numéro : 20100; -- Solde Compte : $4110,00450411144
+Compte Épargne Numéro : 20101; -- Solde Compte : $4500,00493150888

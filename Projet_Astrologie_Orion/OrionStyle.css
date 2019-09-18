@@ -1,0 +1,506 @@
+@font-face
+{
+    /*Définition d'une nouvelle police nommée JellykawesternPrincess */
+    font-family: 'JellykaWesternPrincess';
+    src:url('Fonts/jellyka_western_princess-webfont.eot');
+    src:url('Fonts/jellyka_western_princess-webfont.eot?#iefix') format('embedded-opentype'),
+    url('Fonts/jellyka_western_princess-webfont.woff') format('woff'),
+    url('Fonts/jellyka_western_princess-webfont.ttf') format('truetype'),
+    url('Fonts/jellyka_western_princess-webfont.svgz#jellyka_western_princess-webfont') format('svg'),
+    url('Fonts/jellyka_western_princess-webfont.svg#jellyka_western_princess-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+#Principal
+{
+    width: 1000px;
+    margin: auto;    
+} 
+#Logo
+{
+    display: inline-block;
+    margin-left: 25px;
+    margin-top: 25px;
+    border-radius: 20px;
+}
+#Titre
+{
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    float: right;
+    text-align: center;
+    font-family: JellykaWesternPrincess;
+    font-size: 50px;
+    color: #E65514;
+    text-shadow: 5px 5px 15px white;
+}
+header
+{    
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 20px;
+    background-image: -webkit-linear-gradient(top, #D6D7D7 0%, #3B3B3B 100%);
+    background-image: -moz-linear-gradient(top, #D6D7D7 0%, #3B3B3B 100%);
+    background-image: -o-linear-gradient(top, #D6D7D7 0%, #3B3B3B 100%);
+    /*filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr='#83F999', endColorstr='08BC2A', GradientType=0)*/
+    background-color: #707171;
+    -moz-box-shadow: 10px 10px 25px gray;
+    -webkit-box-shadow: 10px 10px 25px gray;
+    box-shadow: 10px 10px 25px gray;
+}
+footer 
+{    
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 20px;
+    background-image: -webkit-linear-gradient(top, #939495 0%, #C4C5C6 100%);
+    background-image: -moz-linear-gradient(top, #939495 0%, #C4C5C6 100%);
+    background-image: -o-linear-gradient(top, #939495 0%, #C4C5C6 100%);
+    background-color: #707171;
+    -moz-box-shadow: 10px 10px 25px gray;
+    -webkit-box-shadow: 10px 10px 25px gray;
+    box-shadow: 10px 10px 25px gray;  
+    padding: 8px;
+}
+#Images img
+/*images du footer*/
+{
+    height: 80px;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    
+}
+#Images
+/*border du footer*/
+{
+    width: 95%;
+    margin: auto;
+    border: solid 1px black;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 20px;
+    -moz-box-shadow: 10px 10px 25px grey;
+    -webkit-box-shadow: 10px 10px 25px grey;
+    box-shadow: 10px 10px 25px grey;
+}
+footer h3
+{
+    font-size: large;
+    text-align: center;
+    color: black;
+}
+#Legal
+{
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    margin-top: 10px;
+}
+#Liens
+{
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;   
+    border-left: solid 1px black;
+    margin-top: 10px;
+}
+#Legal li
+{
+    list-style: none;
+}
+#Legal a, #Legal a:visited, #Legal a:link, #Liens a, #Liens a:visited, #Liens a:link
+{
+    text-decoration: none;    
+}
+#Legal li, #Liens li
+{
+    list-style: none;
+    font-size: medium;
+    color:black;
+}
+#Contenu
+{
+    overflow: hidden;
+}
+#Contenu article, #Contenu_Signes article, #Contenu_Horoscope article
+{
+    display: inline-block;
+    vertical-align: top;
+    text-align: justify;
+    width: 68%;
+}
+#Contenu aside, #Contenu_Signes aside, #Contenu_Horoscope aside
+/*Événements à venir*/
+{
+    border-radius: 10% 10% 10% 10%;
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    float: right;
+    background-color: #e7dfdf;
+    
+}
+#Login
+{
+    border-radius: 10% 10% 0% 0%;
+    text-align: right;
+    color: whitesmoke;
+    padding: 5px;
+    background-color: #4C1B1B;
+}
+
+#horoscope_Today
+{
+    border-radius: 10% 10% 0% 0%;
+    text-align: right;
+    color: black;
+    padding: 5px;      
+    overflow: hidden;
+    float:right;
+    font-family: times new roman;
+    font-size: 16px;
+}
+#Signe
+{
+    font-family: times new roman;
+    font-size: 16px;    
+}
+#horoscope_Today h3
+{
+    text-align: center;
+    color: black;    
+}
+#Contenu
+{
+    color: black;
+    text-align: justify;
+}
+#Contenu h1
+{
+    text-align: center;
+    margin-top: 35px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    
+}
+#Contenu em, #Contenu strong
+{
+    font-style: normal;
+    font-weight: bold;
+    color: black;
+}
+#menu, #menu ul
+{
+padding:0;
+margin:0;
+list-style:none;
+text-align:center;
+}
+
+#menu li
+{
+display:inline-block;
+position:relative;
+border-radius:8px 8px 0 0;
+}
+#menu ul li
+{
+display:inherit;
+border-radius:0;
+}
+#menu ul li:hover
+{
+border-radius:0;
+}
+#menu ul li:last-child
+{
+border-radius:0 0 8px 8px;
+}
+#menu ul
+{
+position:absolute;
+z-index: 1000;
+max-height:0;
+left: 0;
+right: 0;
+overflow:hidden;
+-moz-transition: .8s all .3s;
+-webkit-transition: .8s all .3s;
+transition: .8s all .3s;
+}
+#menu li:hover ul
+/*limite la taille d'affichage du menu*/
+{
+max-height:30em;
+}
+
+/* background des liens menus */
+#menu li:first-child
+{
+background-color: #65537A;
+background-image:-webkit-linear-gradient(top, #65537A 0%, #2A2333 100%);
+background-image:linear-gradient(to bottom, #65537A 0%, #2A2333 100%);
+}
+#menu li:nth-child(2)
+{
+background-color: #729EBF;
+background-image: -webkit-linear-gradient(top, #729EBF 0%, #333A40 100%);
+background-image:linear-gradient(to bottom, #729EBF 0%, #333A40 100%);
+}
+#menu li:nth-child(3)
+{
+background-color: #F6AD1A;
+background-image:-webkit-linear-gradient(top, #F6AD1A 0%, #9F391A 100%);
+background-image:linear-gradient(to bottom, #F6AD1A 0%, #9F391A 100%);
+}
+#menu li:nth-child(4)
+{
+background-color: #F4E804;
+background-image:-webkit-linear-gradient(top, #F4E804 0%, #8C8500 100%);
+background-image:linear-gradient(to bottom, #F4E804 0%, #8C8500 100%);
+}
+#menu li:last-child
+{
+background-color: #CFFF6A;
+background-image:-webkit-linear-gradient(top, #CFFF6A 0%, #677F35 100%);
+background-image:linear-gradient(to bottom, #CFFF6A 0%, #677F35 100%);
+}
+/* background des liens sous menus */
+#menu li:first-child li
+{
+background:#2A2333;
+}
+#menu li:nth-child(2) li
+{
+background:#333A40;
+}
+#menu li:nth-child(3) li
+{
+background:#9F391A;
+}
+#menu li:nth-child(4) li
+{
+background: #8C8500;
+}
+#menu li:last-child li
+{
+background:#677F35;
+}
+/* background des liens menus et sous menus au survol */
+#menu li:first-child:hover, #menu li:first-child li:hover
+{
+background:#65537A;
+}
+#menu li:nth-child(2):hover, #menu li:nth-child(2) li:hover
+{
+background:#729EBF;
+}
+#menu li:nth-child(3):hover, #menu li:nth-child(3) li:hover
+{
+background:#F6AD1A;
+}
+#menu li:nth-child(4):hover, #menu li:nth-child(4) li:hover
+{
+background:#F4E804;
+}
+#menu li:last-child:hover, #menu li:last-child li:hover
+{
+background:#CFFF6A;
+}
+/* les a href */
+#menu a
+{
+text-decoration:none;
+display:block;
+padding:8px 32px;
+color:#fff;
+font-family:arial;
+}
+#menu ul a
+{
+padding:8px 0;
+}
+#menu li:hover li a
+{
+color:#fff;
+text-transform:inherit;
+}
+#menu li:hover a, #menu li li:hover a
+{
+color:#000;
+}
+/*Horoscopes*/
+#Images_Taureau
+{
+    display: inline-block;
+    margin-top: 25px;
+    height: 80px;
+}
+#Titre_Signes, #Titre_Horoscope
+{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 65px;
+    width: 70%;
+    float: right;
+    text-align: left;
+    font-size: 30px;
+    color: black;
+}
+#Contenu_Signes h4
+{
+    font-size: 20px;
+    
+}
+table.Horoscope_du_Jour 
+{
+  width: 100%;
+  text-align: left;
+  text-align: justify;
+  margin-bottom: 35px;
+}
+table.Horoscope_du_Jour tbody td 
+{
+  font-size: 15px;
+  padding: 10px 15px;
+}
+#Titre_HJ
+{
+    font-size: 20px;
+    color: black;
+    text-shadow: 5px 5px 15px #F37B00;
+    font-weight: bold;
+}
+
+/*Caractéristique*/
+table.caracteristique 
+{
+  border: 1px solid #1C6EA4;
+  background-color: #729EBF;
+  margin-bottom: 100px;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.caracteristique td, table.caracteristique th 
+{
+  border: 1px solid #AAAAAA;
+  padding: 6px 2px;
+}
+table.caracteristique tbody td 
+{
+  font-size: 14px;
+}
+table.caracteristique tr:nth-child(even) 
+{
+  background: #D0EDFF;
+}
+table.caracteristique thead 
+{
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.caracteristique thead th 
+{
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+table.caracteristique thead th:first-child 
+{
+  border-left: none;
+}
+/*Traits*/
+table.traits 
+{
+  border: 1px solid #1C6EA4;
+  background-color: #FCB85C;
+  margin-bottom: 35px;
+  text-align: left;
+  border-collapse: collapse;
+  border: 2px solid #444444;
+}
+table.traits td, table.traits th 
+{
+  border: 1px solid #AAAAAA;
+  padding: 6px 2px;
+}
+table.traits tbody td 
+{
+  font-size: 14px;
+}
+table.traits tr:nth-child(even) 
+{
+  background: #FFF6E9;
+}
+table.traits thead 
+{
+  background: #FCB85C;
+  background: -moz-linear-gradient(top, #FCB85C 0%, #9F391A 66%, #B17524 100%);
+  background: -webkit-linear-gradient(top, #FCB85C 0%, #9F391A 66%, #B17524 100%);
+  background: linear-gradient(to bottom, #FCB85C 0%, #9F391A 66%, #B17524 100%);
+  border: 2px solid #444444;
+}
+table.traits thead th 
+{
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+table.traits thead th:first-child 
+{
+  border-left: none;
+}
+#signe  
+{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/*Astrologie images*/
+#vibratoires img, #elements, #element img
+{
+    height: 150px;
+    margin-left: 5px;
+    margin-bottom: 25px;  
+}
+#vibratoires img, #elements
+{    
+    border: solid 1px #435351;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 20px;
+    -moz-box-shadow: 10px 10px 25px grey;
+    -webkit-box-shadow: 10px 10px 25px grey;
+    box-shadow: 10px 10px 25px grey;
+}
+#element img
+{    
+    border: solid 2px #435351;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 20px;
+    -moz-box-shadow: 10px 10px 25px black;
+    -webkit-box-shadow: 10px 10px 25px black;
+    box-shadow: 10px 10px 25px black;
+.Btn
+{
+    background-color: #FF4E00;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
